@@ -40,11 +40,7 @@ object WallService {
     fun update(post: Post): Boolean {
         for ((index, postReal) in posts.withIndex()) {
             if (postReal.id == post.id) {
-                val (_, ownerId, fromId, createdBy, date, text, replyOwnerId, friendsOnly, comments, likes) = post
-                posts[index] = postReal.copy(
-                    ownerId = ownerId, fromId = fromId, createdBy = createdBy, date = date, text = text,
-                    replyOwnerId = replyOwnerId, friendsOnly = friendsOnly, comments = comments, likes = likes
-                )
+                posts[index] = post.copy()
                 return true
             }
         }
