@@ -8,7 +8,8 @@ data class Post(
     var replyOwnerId: Int,
     var friendsOnly: Boolean = false,
     var comments: Comments,
-    var likes: Likes
+    var likes: Likes? = null,
+    var attachments: Array<Attachments>? = null
 )
 
 class Comments(
@@ -28,7 +29,7 @@ class Likes(
 
 object WallService {
     private var posts = emptyArray<Post>()
-    private var lastId: Int = 0;
+    private var lastId: Int = 0
 
     fun add(post: Post): Post {
         lastId += 1
