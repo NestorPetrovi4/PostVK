@@ -8,7 +8,8 @@ data class Post(
     var replyOwnerId: Int,
     var friendsOnly: Boolean = false,
     var comments: Comments,
-    var likes: Likes? = null
+    var likes: Likes? = null,
+    var attachments: Array<Attachments>? = null
 )
 
 class Comments(
